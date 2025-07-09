@@ -69,12 +69,9 @@ public class ConcentricLayout  extends AbstractLayoutAlgorithm{
                 JSONObject elements = null;
                 try {
                     JSONObject json = new JSONObject(outputString.toString());
-                    System.out.println("Parsed JSON: " + json.toString(4)); // Pretty-print JSON
                     if (!json.has("elements")) {
-                        System.err.println("Error: 'elements' key not found in JSON");
                     } else {
                         elements = json.getJSONObject("elements");
-                        System.out.println("Extracted 'elements': " + elements.toString(4));
                     }
                 } catch (JSONException e) {
                     System.err.println("JSON Parsing Exception: " + e.getMessage());
